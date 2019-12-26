@@ -1079,6 +1079,7 @@ module Extensions =
     pr := definition p
     p
 
+#if DEBUG
 module Tests =
   /// ISO8601-compliant Date/Time Parser.
   /// See https://tools.ietf.org/html/iso8601#section-5.6 for details.
@@ -1208,4 +1209,5 @@ module Tests =
     | Ok ("H\u0065llo, world\U0001F47D",_,_) -> printfn "success"
     | Ok (s, _, _) -> printfn "wrong: %A" s
     | Error e -> printfn "error: %A" e
+#endif
 
