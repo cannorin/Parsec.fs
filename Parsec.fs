@@ -163,7 +163,8 @@ let inline runString (p: Parser<'a, 's>) state input =
 [<AutoOpen>]
 module Primitives =
   let inline preturn (x: 'a) : Parser<'a, 's> = fun (state, s) -> Ok (x, s, state)
-  let inline pzero (state, s: StringSegment) = Error (s.startIndex, lazy "pzero", state)
+  let pzero : Parser<'a, 's> =
+    fun (state, s: StringSegment) -> Error ([s.pos, [Message "pzero"]], state)
 
   let inline ( >>= ) (p: Parser<'a, 's>) (f: 'a -> Parser<'b, 's>) : Parser<'b, 's> =
     fun (state, s) ->
