@@ -18,7 +18,7 @@ Pure F# Parsec Implementation
   * `unicodeNewline / unicodeSpaces` are not supported.
   * Generic `numberLiteral(L)` is not implemented.
   * `pfloat` does not parse hex float numbers and numbers without fraction.
-* Parsec.fs does not contain operator‐precedence parer implementation.
+* Parsec.fs does not contain operator‐precedence parser implementation.
 
 ## License
 
